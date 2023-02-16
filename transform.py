@@ -2,7 +2,6 @@ from torchvision.transforms import (
     Normalize,
     Compose,
     RandomResizedCrop,
-    InterpolationMode,
     ToTensor,
     Resize,
     CenterCrop,
@@ -20,7 +19,6 @@ def image_transform(
     std=(0.26862954, 0.26130258, 0.27577711),
 ):
     normalize = Normalize(mean=mean, std=std)
-    if is_train:
         return Compose(
             [
                 RandomResizedCrop(
